@@ -8,8 +8,6 @@ from flask import jsonify
 from .user_profile.user_profile import *
 
 app = flask.Flask("user_profiles_api")
-#logger = flask.logging.create_logger(app)
-#logger..setLevel(logging.INFO)
 
 logging.config.fileConfig("logger.conf")
 
