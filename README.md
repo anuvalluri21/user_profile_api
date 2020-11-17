@@ -39,12 +39,15 @@ curl -i "http://127.0.0.1:5000/health-check"
 
 #### Goal: Get Merged User profile data from Github and Bitbucket
 For API design documentation, please visit the design_document.docx in root folder
+Curl request without token header.
 
 ```
 curl -i "http://127.0.0.1:5000/users/{organization}/profile"
 ```
 
-Note: Token should be provided to avoid rate limit on github api (It allows only 60 requests per hour). 
+Note: In case we need to access more than 60 requests per hour, then only Token should be provided, otherwise there is no need to
+provide any token in the header
+ 
 Curl request with token header.
 ```
 curl -i -H "x-github-auth-token: {token}" "http://127.0.0.1:5000/users/{organization}/profile"
